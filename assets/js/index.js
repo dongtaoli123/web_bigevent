@@ -1,4 +1,4 @@
-;(function(){
+
     getUserInfo()
 
     let layer = layui.layer
@@ -69,4 +69,3 @@
 
 
     
-})()
