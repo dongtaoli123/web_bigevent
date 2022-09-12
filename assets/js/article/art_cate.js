@@ -1,4 +1,4 @@
-
+(function(){
   var layer = layui.layer
   var form = layui.form
 
@@ -37,13 +37,13 @@
       data: $(this).serialize(),
       success: function(res) {
           console.log(res);
-        // if (res.status !== 0) {
-        //   return layer.msg('新增分类失败！')
-        // }
-        // initArtCateList()
-        // layer.msg('新增分类成功！')
-        // // 根据索引，关闭对应的弹出层
-        // layer.close(indexAdd)
+        if (res.status !== 0) {
+          return layer.msg('新增分类失败！')
+        }
+        initArtCateList()
+        layer.msg('新增分类成功！')
+        // 根据索引，关闭对应的弹出层
+        layer.close(indexAdd)
       }
     })
   })
@@ -80,6 +80,7 @@
       url: '/my/article/updatecate',
       data: $(this).serialize(),
       success: function(res) {
+        console.log(res);
         if (res.status !== 0) {
           return layer.msg('更新分类数据失败！')
         }
@@ -98,6 +99,7 @@ $('tbody').on('click','.btn-delete',function(){
       method:'get',
       url: '/my/article/deletecate/' + id,
       success:function(res){
+        console.log(res);
         if(res.status !== 0){
           return layer.msg('删除分类失败')
         }
@@ -111,3 +113,4 @@ $('tbody').on('click','.btn-delete',function(){
     });
  
 })
+})()
