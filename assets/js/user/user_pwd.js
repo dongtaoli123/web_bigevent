@@ -1,4 +1,4 @@
-$(function(){
+
       //自定义校验规则
       let form = layui.form
       let layer = layui.layer
@@ -38,4 +38,4 @@ $(function(){
           }
         })
       })
-})
+
